@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Class controlling the state of mowers in a garden.
+ */
 public class MowerController {
 
     private static final Logger LOGGER = LogManager.getLogger(MowerController.class);
@@ -19,13 +22,25 @@ public class MowerController {
     private final Garden garden = new Garden(0, 0);
     private int nextMowerId = 1;
 
-    /**
-     * Main.
-     * <p/>
-     * The garden is reset and all previously existing mowers are removed.
-     *
-     * @param commands list of commands to process
-     */
+    /**
+     * Process a list of commands for garden initialization as well as mower creation and control.
+     * <p/>
+     * The list of commands must contain at least one line: the one for garden initialization.
+     * <br>
+     * If there are additional lines, they must come by pair:
+     * <ul>
+     *     <li>the first line of the pair describes a mower's creation,</li>
+     *     <li>the second line of the pair is a sequence of actions to be given to the mower</li>
+     * </ul>
+     * <p/>
+     * <b>Note:</b> when this method is called, the garden is reset and all previously created
+     * mowers are removed.
+     *
+     * @param commands list of commands to process
+     * @throws IllegalArgumentException if there is no command, if a command is malformed or if a
+     * pair of commands for mower creation and control is incomplete
+     * @throws IllegalStateException    if an exception occurs while parsing a command
+     */
     public void process(List<String> commands) {
         if (commands == null) {
             throw new IllegalArgumentException("commands must not be null");
@@ -67,13 +82,24 @@ public class MowerController {
         }
     }
 
+    /**
+     * Getter for the mowers field.
+     *
+     * @return non null list of mowers.
+     */
     public List<Mower> getMowers() {
         return mowers;
     }
 
+    /**
+     * Getter for the garden field.
+     *
+     * @return the last garden instance created, it will return a zero-sized garden if {@link
+     * #process(List)} has never been called before.
+     */
     public Garden getGarden() {
         return garden;
-    }
+    }
 
     private void initializeGarden(String[] args) {
         LOGGER.debug("Initializing garden...");

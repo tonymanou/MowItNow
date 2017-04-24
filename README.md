@@ -30,6 +30,7 @@ sont
 « G »
 et
 « A ».
+
 « D »
 et
 « G »
@@ -48,6 +49,7 @@ respectivement,
 sans
 la
 déplacer.
+
 « A »
 signifie
 que
@@ -59,10 +61,8 @@ d'une
 case
 dans
 la
-direction à laquelle elle fait fa
-ce, et sans modi
-fier son or
-ientation.
+direction à laquelle elle fait face, et sans modifier son orientation.
+
 Si
 la
 position
@@ -80,32 +80,15 @@ ne
 bouge
 pas,
 conserve son orientation et
- traite la comma
-nde sui
-vante.
-On assume que la case directement a
-u Nord de la position (x, y) a pour coordonnées (x, y+1).
-Pour programmer la tondeu
-se, on lui fournit un fichier d'entrée const
-ruit comme
- suit :
-●
-La
-première
-ligne
-correspond
-aux
-coordonnées
-du
-coin
-supérieur
-droit
-de
-la
-pelouse,
-celles
-du coin inférieur gauche sont supposées être (0,0)
-●
+ traite la commande suivante.
+
+On assume que la case directement au Nord de la position (x, y) a pour coordonnées (x, y+1).
+
+Pour programmer la tondeuse, on lui fournit un fichier d'entrée construit comme suit :
+
+ - La première ligne correspond aux coordonnées du coin supérieur droit de la pelouse, 
+celles du coin inférieur gauche sont supposées être (0,0)
+ - 
 La
 suite
 du
@@ -120,12 +103,10 @@ qui
 ont
 été
 déployées.
-Chaque
-tondeuse a deux lignes 
-la concer
-nant :
-●
-la
+
+Chaque tondeuse a deux lignes  la concernant :
+
+ - la
 première
 ligne
 donne
@@ -142,8 +123,7 @@ orientation.
 La
 position
 et
-l'orientat
-ion
+l'orientation
 sont
 fournies
 sous
@@ -157,33 +137,22 @@ une
 lettre,
 séparés
 par un espace
-●
-la
-seconde
-ligne
-est
-une
-série
+ - la seconde ligne est une série 
 d'instructions
-ordonna
-nt
+ordonnant
 à
 la
 tondeuse
 d'explorer
 la
-pelouse. Les instructi
-ons sont une sui
-te de ca
-ractères sans espaces.
+pelouse. Les instructions sont une suite de caractères sans espaces.
 Chaque
 tondeuse
 se
 déplace
 de
 façon
-séquenti
-elle,
+séquentielle,
 ce
 qui
 signifie
@@ -192,9 +161,7 @@ la
 seconde
 tondeuse
 ne
-bouge que lorsque la premièr
-e a exécuté i
-ntégralement sa
+bouge que lorsque la première a exécuté intégralement sa
  série d'instructions.
 Lorsqu'une
 tondeuse
@@ -209,51 +176,23 @@ position
 et
 son
 orientation.
+
 OBJECTIF
-Concevoir
-et
-écrire
-un
-programme
-s'exécuta
-nt
-sur
-une
-JVM
-et
-implémentant
-la
-spécification
-ci-dessus et passant le test
- ci-après
+--------
+Concevoir et écrire un programme s'exécutant sur une JVM et implémentant la spécification ci-dessus et passant le test ci-après
+
+
 TEST
-Le fichier suivant est fourni
- en entr
-ée :
-5 5
-1 2 N
-GAGAGAGAA
-3 3 E
-AADAADADDA
-On attend le résultat suivan
-t (position finale des tondeuses)
- :
-1 3 N
-5 1 E
-NB:
-Les
-données
-en
-entrée
-peuvent
-être
-injectée
-sous
-une
-autre
-forme
-qu'un
-fichier
-(par
-exemple un test automatisé)
-.
+----
+Le fichier suivant est fourni en entrée :
+    5 5
+    1 2 N
+    GAGAGAGAA
+    3 3 E
+    AADAADADDA
+
+On attend le résultat suivant (position finale des tondeuses) :
+    1 3 N
+    5 1 E
+
+NB: Les données en entrée peuvent être injectée sous une autre forme qu'un fichier (par exemple un test automatisé).
